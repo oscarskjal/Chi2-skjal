@@ -5,13 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Deklarera 4 Button-objekt
-
-    // Deklarera 4 heltalsvariabler för knapparnas värden, t.ex.
-    // val1, val2, val3, val4
+    private Button button1, button2, button3, button4;
+    private int val1, val2, val3, val4;
 
 
 
@@ -20,8 +20,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialisera Button-objekten med referens till knapparna i layouten
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
+        button1 = findViewById(R.id.button1);
+        button2 = findViewById(R.id.button2);
+        button3 = findViewById(R.id.button3);
+        button4 = findViewById(R.id.button4);
 
     }
 
@@ -30,15 +35,18 @@ public class MainActivity extends AppCompatActivity {
      */
     public void buttonClick(View view) {
 
-        // Skapa ett Button-objekt genom att type-casta (byta datatyp)
-        // på det View-objekt som kommer med knapptrycket, t.ex.
-        // Button btn = (Button) view;
+        Button clickedButton = (Button) view;
 
-        // Kontrollera vilken knapp som klickats, öka värde på rätt vaiabel
-        // T.ex. för att kolla om man tryckt på knappen med id "button1":
-        //  if (view.getId() == R.id.button1)
+        if (clickedButton.getId() == R.id.button1) {
+            val1++;
+        } else if (clickedButton.getId() == R.id.button2) {
+            val2++;
+        } else if (clickedButton.getId() == R.id.button3) {
+            val3++;
+        } else if (clickedButton.getId() == R.id.button4) {
+            val4++;
+        }
 
-        // Slutligen, kör metoden som ska räkna ut allt!
         calculate();
     }
 
@@ -47,14 +55,21 @@ public class MainActivity extends AppCompatActivity {
      */
     public void calculate() {
 
-        // Uppdatera knapparnas text med de nuvarande värdena,
-        // du kan använda .setText() på ett button-objekt.
+        button1.setText("Val 1: " + val1);
+        button2.setText("Val 2: " + val2);
+        button3.setText("Val 3: " + val3);
+        button4.setText("Val 4: " + val4);
 
-        // Mata in värdena i Chi-2-uträkningen och ta emot resultatet, t.ex:
-        //  double chi2 = Significance.chiSquared(val1, val2, val3, val4);
 
-        // Mata in chi2-resultatet i getP() och ta emot p-värdet, t.ex:
-        // double pValue = Significance.getP(chi2);
+        double chi2 = Significance.chiSquared(val1, val2, val3, val4);
+
+
+        double pValue = Significance.getP(chi2);
+
+        String resultMessage = "Chi^2: " + chi2 + "\n" +
+                "p-värde: " + pValue;
+
+        Toast.makeText(this, resultMessage, Toast.LENGTH_LONG).show();
 
         /**
          *  - Visa chi2 och pValue åt användaren på ett bra och tydligt sätt!
