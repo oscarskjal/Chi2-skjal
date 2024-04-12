@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/edit_text_men"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Text för män" />
+
+    <EditText
+        android:id="@+id/edit_text_women"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Text för kvinnor" />
+
+    <EditText
+        android:id="@+id/edit_text_over_8_hours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Text för sover över 8h" />
+
+    <EditText
+        android:id="@+id/edit_text_under_8_hours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Text för sover under 8h" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Spara" />
+
+
+</LinearLayout>

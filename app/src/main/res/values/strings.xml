@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Signifikansanalys</string>
+    <string name="text_col1">Men</string>
+    <string name="text_col2">Women</string>
+    <string name="text_row1">Sleep 8h+</string>
+    <string name="text_row2">Sleep under 8h</string>
+    <string name="initial_button_text">0</string>
+    <string name="sover_under_8h">Sover under 8h</string>
+    <string name="_0">0</string>
+    <string name="_01">0</string>
+    <string name="sover_8h">sover 8h+</string>
+    <string name="kvinnor">kvinnor</string>
+    <string name="men">men</string>
+    <string name="_02">0</string>
+    <string name="_03">0</string>
+    <string name="b_rja_om">Börja om</string>
+
+</resources>
